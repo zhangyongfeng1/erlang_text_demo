@@ -1,0 +1,2 @@
+-module(record).
+-record(book,{author, bookname, chapters = 0}).

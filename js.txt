@@ -1,0 +1,63 @@
+-module(case_matching).
+-export([greet/2]).
+
+greet(Gender, Name) ->
+  case Gender of
+    male ->
+      io:format("Hello, Mr. ~s!~n", [Name]);
+    female ->
+      io:format("Hello, Mrs. ~s!~n", [Name]);
+    _ ->
+      io:format("Hello, ~s!~n", [Name])
+  end.
+
+-module(color).
+
+-export([new/4,blend/2]).
+
+-define(is_channel(V) ,
+		(is_float(V) andalso V > 0.0 andalso V =< 1.0)
+		).
+
+%%接收一个新的alpha 颜色的值并添加返回到映射里面
+new(R, G, B, A) when ?is_channel(R),?is_channel(G),
+					?is_channel(B),?is_channel(A) ->
+	#{red => R, green => G, blue => B, alpha => A}.
+
+alpha(#{alpha := SA},#{alpha := DA}) ->
+    SA + DA * (1.0 - SA).
+
+red() ->
+
+ok.
+
+green() ->
+ok.
+
+blue() ->
+ok.
+
+
+blend(Src, Dst) ->
+    blend(Src, Dst, alpha(Src,Dst)).
+
+
+
+blend(_A,_B)->
+    ok.
+
+		
+-module(records).
+-export([get_user_name/1,
+         get_user_phone/1]).
+
+-record(user, {
+  name,
+  phone
+}).
+
+get_user_name(#user{name=Name}) ->
+  Name.
+
+get_user_phone(#user{phone=Phone}) ->
+  Phone.

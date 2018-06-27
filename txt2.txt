@@ -1,0 +1,6 @@
+this.cpgg_name = body['cpgg']['name'] or '';--产品规格
+this.cpgg_value = body['cpgg']['value'] or '';--产品规格
+this.gmsl_name = body['gmsl']['name'] or '';--购买数量
+this.gmsl_value = body['gmsl']['value'] or '';--购买数量
+this.gmfe_name = body['gmfe']['name'] or '';--购买份额
+this.gmfe_value = body['gmfe']['value'] or '';--购买份额

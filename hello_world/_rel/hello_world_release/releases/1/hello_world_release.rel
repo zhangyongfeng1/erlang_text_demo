@@ -1,0 +1,7 @@
+{release,{"hello_world_release","1"},
+         {erts,"8.1"},
+         [{kernel,"5.1"},
+          {stdlib,"3.1"},
+          {hello_world,"0.1.0"},
+          {sasl,"3.0.1"},
+          {runtime_tools,"1.10.1"}]}. 

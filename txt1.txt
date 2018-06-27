@@ -1,0 +1,3 @@
+<cpgg><name>产品规格</name><value>123克</value></cpgg>
+<gmsl><name>购买数量</name><value>234个</value></gmsl>
+<gmfe><name>购买份额</name><value>345克</value></gmfe>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Erlang & WebSocket</title>
+  <script type="text/javascript">
+    function doubleNum() {
+        var o = document.getElementById("number");
+        var socket = new WebSocket("ws://127.0.0.1:8181");
+        socket.onopen = function() {
+            socket.send(o.value);
+            socket.onmessage = function(r) {
+                o.value = r.data;
+                socket.close();
+                socket=null;
+            }
+        }
+    }
+  </script>
+ </head>
+ <body>
+  <input type="text" size=10 value=100 id="number">
+  <input type="button" value="Double" onclick="doubleNum()">
+ </body>
+</html>
